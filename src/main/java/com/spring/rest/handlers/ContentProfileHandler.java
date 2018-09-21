@@ -30,11 +30,6 @@ public class ContentProfileHandler{
     }
 
     @NotNull
-    public ContentProfile getContentProfile(String contentId){
-        return profileManager.getContentProfile(contentId);
-    }
-
-    @NotNull
     public Mono<ServerResponse> getContentProfile(ServerRequest request){
         try{
             String contentId = request.pathVariable("contentId");
