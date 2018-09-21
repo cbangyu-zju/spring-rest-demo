@@ -2,7 +2,6 @@ package com.spring.rest.handlers;
 
 
 import com.spring.rest.models.ContentProfile;
-import com.spring.rest.models.UserProfile;
 import com.spring.rest.modules.ProfileManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -33,7 +32,7 @@ public class ContentProfileHandler{
     public Mono<ServerResponse> getContentProfile(ServerRequest request){
         try{
             String contentId = request.pathVariable("contentId");
-            UserProfile contentProfile = this.profileManager.getUserProfile(contentId);
+            ContentProfile contentProfile = this.profileManager.getContentProfile(contentId);
             return ServerResponse.ok().contentType(APPLICATION_JSON_UTF8).body(fromObject(contentProfile));
         } catch (Exception ex) {
             ex.printStackTrace();
