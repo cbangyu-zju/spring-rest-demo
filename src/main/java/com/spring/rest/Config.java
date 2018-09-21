@@ -39,6 +39,6 @@ public class Config {
             LOG.debug("get health check request");
             return ServerResponse.ok().body(fromObject("I'm still alive")); })
                 .and(route(GET("/user/{userId}/getUserProfile"), userProfileHandler::getUserProfile))
-                .and(route(GET("/user/{contentId}/getContentProfile"), contentProfileHandler::getContentProfile));
+                .and(route(GET("/content/{contentId}/getContentProfile"), contentProfileHandler::getContentProfile));
     }
 }
